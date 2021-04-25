@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    int len,i,count = 1;
+
+    char name[101];
+
+    cin>> name;
+
+    len = strlen(name);
+
+    sort(name,name + len);
+
+    for (int i = 0; i < len -1; i++)
+    {
+       if(name[i]!=name[i+1]) count++;
+    }
+    
+    if(count %2 == 1) cout << "IGNORE HIM!";
+   else if(count %2 == 0) cout << "CHAT WITH HER!";  
+
+   return 0;
+}
